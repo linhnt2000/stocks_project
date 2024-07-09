@@ -1,0 +1,272 @@
+
+
+
+.stock{
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.container{
+    width: 77%;
+    height: 100%;
+    position: relative;
+}
+
+.chart-container{
+  position:relative;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 5px;
+}
+
+.chart-container .view-chart{
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.top-chart{
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: aliceblue;
+  padding-bottom: 5px;
+}
+
+
+.top-chart-bar {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.top-chart-bar .top-ticker {
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.top-chart-bar .top-ticker:hover {
+  color: #007bff;
+}
+
+.top-chart-bar .top-ticker:hover::after {
+  content: "Chọn mã";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Dịch chuyển lề trái của nó */
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  width: max-content; /* Định dạng chiều dài ngang */
+}
+
+.top-chart-bar .top-ticker:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.top-chart-bar .top-detail{
+  /* margin-left: 10px; */
+  border-left: 1px solid #ccc;
+}
+
+
+.top-chart-bar .top-select span {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-chart-bar .top-select span:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.main-chart{
+  position: absolute;
+  width: calc(100% - 60px);
+  height: 100%;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+}
+
+.legend {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 18px;
+  font-weight: 300;
+  background-color: aliceblue;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.legend div{
+  text-align: start;
+  margin: 5px;
+}
+
+/* thanh công cụ */
+.left-chart{
+  position: absolute;
+  width: 50px;
+  height: 85vh;
+  top: 50px;
+  left: 0;
+  z-index: 1;
+  background-color: aliceblue;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-chart {
+  width: 90%;
+  border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-chart:hover {
+  background-color: #f2f2f2;
+}
+
+/* vùng phải */
+.right-container {
+  flex: 1;
+  padding: 5px;
+
+}
+
+.right-infor{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.right-infor:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stock-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+
+  
+  .stock-table:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stock-table th, .stock-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  
+  .stock-table th {
+    background-color: #f2f2f2;
+  }
+.stock-table .item_name_guide {
+  cursor: pointer;
+  color: #007bff;
+}
+
+
+.search {
+  position: relative;
+  height: 100%;
+}
+
+.search input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.suggestions {
+  top: 20px;
+  text-align: start;
+  z-index: 10;
+  list-style-type: none;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  max-height: 70%; /* Chiều cao tối đa của danh sách */
+  overflow-y: auto; /* Kích hoạt cuộn dọc */
+}
+
+.suggestions li {
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; /* Đường viền phân cách các mục */
+}
+
+.company-info {
+  display: flex;
+}
+
+.company-info-item {
+  flex: 1;
+  padding: 0 10px; /* Để khoảng cách giữa các thông tin */
+}
+
+
+/* MultiPaneChart.css */
+.separator {
+  height: 2px;
+  background-color: #ccc;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: black;
+}
+
+.test{
+  color: rgb(255, 255, 255);
+}

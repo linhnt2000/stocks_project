@@ -1,0 +1,536 @@
+.tracking-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    max-height: 100vh;
+}
+
+.side_bar-container{
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.top-side_bar{
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.top-side_bar .side_bar-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.side_bar-title .title_name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.side_bar-title .add:hover {
+    color: #4CAF50;
+}
+
+.tracking_list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.tracking_list,
+.add_tracking {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px); /* Hiển thị phía dưới tiêu đề */
+    width: 100%;
+    max-height: 500px; /* Giới hạn chiều cao của danh sách */
+    overflow-y: auto; /* Cho phép cuộn nếu danh sách quá dài */
+    background-color: #fff; /* Nền màu trắng */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    padding: 10px;
+}
+
+.add_tracking input[type='text'] {
+    width: calc(100% - 70px); /* Độ rộng của input */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.add_tracking button {
+    padding: 6px 12px;
+    background-color: #007bff; /* Màu nút */
+    color: #fff; /* Màu chữ nút */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* phần gợi ý */
+.add_suggestions {
+    top: 20px;
+    text-align: start;
+    z-index: 10;
+    list-style-type: none;
+    padding-left: 1px;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    max-height: 70%; /* Chiều cao tối đa của danh sách */
+    overflow-y: auto; /* Kích hoạt cuộn dọc */
+  
+  }
+  
+  .add_suggestions li {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add_suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .add_suggestions .company-info {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+  }
+  
+  .add_suggestions .ticker {
+    font-weight: bold; /* Chữ in đậm cho phần ticker */
+    font-size: 14px; /* Kích thước chữ của phần ticker */
+    margin-bottom: 5px; /* Khoảng cách dưới của phần ticker */
+  }
+  
+  .add_suggestions .name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px; /* Kích thước chữ của phần name */
+  }
+  
+
+.mid-side_bar {
+    width: 100%;
+    height: calc(100% - 80px); /* Chiều cao còn lại cho phần trung gian */
+    overflow-y: auto; /* Cho phép cuộn nếu danh sách quá dài */
+}
+
+.side_bar-item {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+
+.side_bar-item:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
+.side_bar-item .name:hover{
+    color: #007bff;
+}
+
+.side_bar-item .action:hover{
+    color: red;
+}
+
+
+
+
+.delete_tracking, .add_group {
+    position: fixed;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    text-align: center;
+}
+
+.delete_tracking p,
+.add_group p {
+  margin-bottom: 15px;
+}
+
+.delete_tracking button,
+.add_group button {
+  margin: 5px;
+  padding: 8px 20px;
+  border: none;
+  color: #fff; /* Màu chữ */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+  .delete_button{
+    background-color: rgb(236, 94, 94); /* Màu nền chính */
+  }
+  
+  .delete_button:hover {
+    background-color: red; /* Màu nền chính khi hover */
+  }
+  
+  .cancel_button {
+    background-color: #007bff; /* Màu nền chính */
+  }
+  
+  .cancel_button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+  }
+
+  .add_button {
+    background-color: #89dc89;
+  }
+
+  .add_button:hover {
+    background-color: #5cb85c;
+  }
+
+.delete_tracking input[type='text'],
+.add_group input[type='text'] {
+  width: calc(100% - 40px); /* Độ rộng của input */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước */
+}
+
+.main-container{
+    display: flex;
+}
+
+/* .company-profile-container{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+} */
+
+.company-profile-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile_name {
+    font-size: 18px; /* Kích thước chữ cho tên công ty và mã */
+    font-weight: bold; /* Chữ in đậm */
+    color: #333; /* Màu chữ */
+    margin-top: 5px; /* Khoảng cách với phần khác của giao diện */
+    padding: 10px; /* Đệm để tạo không gian xung quanh */
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .company-profile-container > div:first-child {
+    margin-bottom: 15px;
+  }
+  
+  .company-profile-container .tracking_item {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+  }
+  
+  .company-profile-container .tracking_item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Optional: Animate text color on hover */
+  .company-profile-container .tracking_item:hover {
+    color: #007bff;
+  }
+  
+
+
+/* CSS cho phần main content */
+.company-profile {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left; /* Căn lề văn bản sang trái */
+    border-radius: 5px; /* Bo góc cho bảng */
+    overflow: hidden; /* Ẩn đi phần dư thừa nếu bảng quá dài */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho bảng */
+  }
+  
+  .company-profile th {
+    background-color: #f2f2f2; /* Màu nền cho phần tiêu đề */
+    padding: 10px; /* Khoảng cách giữa nội dung và đường viền */
+    font-weight: bold; /* Đậm cho phần tiêu đề */
+  }
+  
+  .company-profile td, .company-profile th {
+    border: 1px solid #ddd; /* Đường viền các ô */
+    padding: 8px; /* Khoảng cách giữa nội dung và đường viền */
+  }
+  
+  .company-profile tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Màu nền cho các hàng chẵn */
+  }
+  
+  .company-profile tbody tr:hover {
+    background-color: #eaf6ff; /* Màu nền khi hover */
+  }
+  
+  .company-profile tbody td {
+    vertical-align: middle; /* Căn giữa nội dung trong ô */
+  }
+
+.tracking_item{
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.tracking-right-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .company_dividend{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px ;
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow-y: auto;
+} */
+
+/* .company_dividend-main{
+    width: 100%;
+    height: 100%;
+} */
+
+.company_dividend {
+    width: 100%;
+    margin-top: 20px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.company_dividend-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.company_dividend-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ccc;
+}
+
+.company_dividend-main {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.company_dividend-main th, .company_dividend-main td {
+    padding: 10px;
+    text-align: left;
+}
+
+.company_dividend-main th {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.company_dividend-main td {
+    border-bottom: 1px solid #eee;
+}
+
+.company_dividend-main tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+
+.company_news {
+    width: 100%;
+    margin-top: 20px;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.company_news-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.company_news-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.separator {
+    height: 1px;
+    background-color: #ccc;
+}
+
+.company_news-main {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company_news-main th, .company_news-main td {
+    padding: 10px;
+    text-align: left;
+
+}
+
+.company_news-main th {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.company_news-main td {
+    border-bottom: 1px solid #eee;
+}
+
+.company_news-main tbody tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+
+.news_detail{
+    position: fixed;
+    width: 768px;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    z-index: 101;
+}
+
+.news_detail-header {
+    margin-bottom: 10px;
+    text-align: start;
+}
+
+.news_detail-header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.news_detail-header-detail{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+.news_detail-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.news_detail-main {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+    text-align: start;
+}
+
+.news_detail-main p {
+    margin: 10px;
+}
+
+.news_detail-main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.news_detail-main table td, 
+.news_detail-main table th {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+}
+
+
+.news_detail-main table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.news_detail button {
+    background: #f44336;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.news_detail button:hover {
+    background: #d32f2f;
+}
+
+
+  
+  
+  

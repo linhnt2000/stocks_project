@@ -1,0 +1,30 @@
+
+.App {
+  margin: 0;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* .chart-container {
+  max-height: 700px;
+} */
+.volume-container {
+  height: 300px;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(49, 33, 33, 0.166);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  display: none;
+  z-index: 9999; /* Đảm bảo tooltip hiển thị trên cùng */
+}
+
